@@ -1,0 +1,18 @@
+server:
+    port: 8080
+    address: 116.62.149.237  #116.62.149.237这个是阿里云端地址
+spring:
+    datasource:
+        driverClass: com.mysql.jdbc.Driver
+        url: jdbc:mysql://116.62.149.237:3306/app?useUnicode=true&characterEncoding=utf-8
+        username: root
+        password: lhc2018
+        initialSize : 5
+        minIdle : 5
+        maxActive : 20
+        maxWait : 60000
+        timeBetweenEvictionRunsMillis : 60000
+        minEvictableIdleTimeMillis : 300000
+mybatis:
+    mapper-locations: classpath*:com/train/businessserver/mapper/*.xml
+    type-aliases-package: com.train.businessserver.entity

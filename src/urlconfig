@@ -1,0 +1,2 @@
+登录接口：http://116.62.149.237:8080/USR000100001?usrName=haha&passwd=123456
+注册接口：http://116.62.149.237:8080/USR000100000?usrName=haha&User_passwd=123456&user_Phone=13512219574
