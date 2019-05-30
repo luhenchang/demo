@@ -1,4 +1,4 @@
+https://www.cnblogs.com/quickcodes/p/5398882.html
 修改字段名属性：ALTER TABLE chatter_users MODIFY COLUMN ip VARCHAR(50);
-
 //新建首页表：
 CREATE TABLE APP_BANNER_TABLE(Id INT  PRIMARY KEY AUTO_INCREMENT,Banner_url VARCHAR(100),Banner_title VARCHAR(20));

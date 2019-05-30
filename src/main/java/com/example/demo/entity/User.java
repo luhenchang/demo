@@ -7,7 +7,6 @@ public class User {
     private String usrName;
     @Column(name="PASSWD")
     private String passwd;
-
     public String getUsrName() {
         return usrName;
     }
