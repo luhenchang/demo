@@ -1,9 +1,3 @@
-https://www.cnblogs.com/quickcodes/p/5398882.html
-修改字段名属性：ALTER TABLE chatter_users MODIFY COLUMN ip VARCHAR(50);
-//新建首页表：
-CREATE TABLE APP_BANNER_TABLE(Id INT  PRIMARY KEY AUTO_INCREMENT,Banner_url VARCHAR(100),Banner_title VARCHAR(20));
-
-
 package com.example.demo.entity;
 
 import javax.persistence.Column;
@@ -60,26 +54,3 @@ public class LivoRecoment {
         this.live_sub_name = live_sub_name;
     }
 }
-
-SELECT *FROM APP_BANNER_TABLE;
-TRUNCATE TABLE APP_BANNER_TABLE;
-INSERT INTO APP_BANNER_TABLE(Banner_url,Banner_title) VALUES ('http://10086.gitee.ltd/img/app/img_banner.webp','电网架空线路');
-set names utf8
-show variables like "%char%";
-set character_set_database='utf8';
-set character_set_server='utf8';
-alter database app  default character set "utf8"
-
-SHOW CREATE TABLE APP_BANNER_TABLE;
-ALTER TABLE APP_BANNER_TABLE DEFAULT CHARSET utf8;
-jdbc:mysql://127.0.0.1:3306/app?characterEncoding=utf-8
-DELETE FROM TEST_USER_INFO WHERE id=4;
-SELECT *FROM TEST_USER_INFO;
-TRUNCATE TABLE TEST_USER_INFO;
-
-SELECT 1 FROM TEST_USER_INFO WHERE USRNAME = "wangfei";
-INSERT INTO TEST_USER_INFO(USRNAME,User_Phone) VALUES ('wangfei','13512219573')
-
-INSERT INTO TEST_USER_INFO (USRNAME,User_Phone,PASSWD) VALUES('唐吕','13453333455','123456')
-
-

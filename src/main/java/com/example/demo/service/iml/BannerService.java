@@ -13,7 +13,6 @@ public class BannerService implements IBannerService {
     IBannerDao bannerDao;
     @Override
     public List<Banner> GetBannerData(Banner banner) {
-        List<Banner> selectresult=bannerDao.GetBannerData();
-        return selectresult;
+        return bannerDao.GetBannerData();
     }
 }

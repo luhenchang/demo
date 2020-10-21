@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.entity.LivoRecomentBean;
+import com.example.demo.entity.LivoRecoment;
 import com.example.demo.service.ILivoRecomentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,9 +17,8 @@ public class LivoRecomentController {
     private ILivoRecomentService livoRecomentService;
 
     @RequestMapping(value = "USR000100003")
-    public Object getLivoRecoment(LivoRecomentBean livoRecomentBean) {
-        List<LivoRecomentBean> mData = livoRecomentService.getLivoRecomentData(livoRecomentBean);
-
+    public Object getLivoRecoment(LivoRecoment livoRecomentBean) {
+        List<LivoRecoment> mData = livoRecomentService.GetRecomeData(livoRecomentBean);
         if (mData.size() > 0) {
             livoMap.put("rescode", "000000");
             livoMap.put("resobj", mData);

@@ -1,9 +1,9 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.LivoRecomentBean;
+import com.example.demo.entity.LivoRecoment;
 
 import java.util.List;
 
 public interface ILivoRecomentService {
-    public List<LivoRecomentBean> getLivoRecomentData(LivoRecomentBean livoRecomentBean);
+    List<LivoRecoment> GetRecomeData(LivoRecoment livoRecoment);
 }

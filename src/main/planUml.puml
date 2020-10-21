@@ -1,0 +1,32 @@
+@startuml
+(*) ->"Start"
+"Start" -> "登录"
+if "Login success or failure?" then
+    -->[yes]"home"
+else
+    -->[no]"shool"
+else
+    -->[another] "不对吧"
+    if "你好" then
+    -->[yes]"tmd"
+    else
+    -->[tmdhaha]"meili"
+    else
+    -->[another] (*)
+    else
+    -->[yes]"tmd"
+    else
+    -->[yes]"tmd"
+    else
+    -->[yes]"tmd"
+    else
+    -->[yes]"tmd"
+    else
+    -->[yes]"tmd"
+
+
+@enduml
+
+
+
+

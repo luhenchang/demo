@@ -1,9 +1,9 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.User;
-import com.example.demo.entity.UserInforMation;
+import com.example.demo.entity.UserInferMarion;
 
 public interface IUserService {
-    public boolean login(User user);
-    public boolean Regiset(UserInforMation userInforMation);
+    boolean login(User user);
+    int Regiset(UserInferMarion userInferMarion);
 }

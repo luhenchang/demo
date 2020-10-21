@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import tk.mybatis.spring.mapper.MapperScannerConfigurer;
 /**
  * 
- * @author sxx
+ * @author luhenchang
  *
  */
 @Configuration

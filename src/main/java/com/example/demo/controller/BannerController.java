@@ -4,6 +4,7 @@ import com.example.demo.entity.Banner;
 import com.example.demo.service.IBannerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
@@ -17,15 +18,13 @@ public class BannerController {
 
     @RequestMapping(value = "USR000100002")
     public Object getBanner(Banner banner){
-        List<Banner> isList = bannerService.GetBannerData(banner);
-        if (isList.size()>0){
+        List<Banner> result= bannerService.GetBannerData(banner);
+        if (result.size()>0){
             bannMap.put("rescode","000000");
-            bannMap.put("resobj",isList);
         } else {
             bannMap.put("rescode","999999");
-            bannMap.put("resobj",isList);
         }
-
+        bannMap.put("resobj",result);
         return bannMap;
     }
 }
