@@ -1,28 +1,45 @@
 server:
   port: 8080
   address: localhost #本地
-  //address: 116.62.149.237  #116.62.149.237这个是阿里云端地址
+  #address: 116.62.149.237  #116.62.149.237这个是阿里云端地址
 spring:
   jpa:
     hibernate:
+      ddl-auto: update
       naming:
         physical-strategy: org.hibernate.cfg.DefaultNamingStrategy
+        #implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+        #physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+
+
   datasource:
-    driverClass: com.mysql.jdbc.Driver
-    url: jdbc:mysql://116.62.149.237:3306/app?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/app?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
-    password: lhc2018
-    initialSize: 5
-    minIdle: 5
-    maxActive: 20
-    maxWait: 60000
-    timeBetweenEvictionRunsMillis: 60000
-    minEvictableIdleTimeMillis: 300000
-  resources:
-    static-locations: =classpath:/META-INF/resources/,classpath:/resources/, classpath:/static/, classpath:/public/, file:/home/img/
+    password: HappySoul999999
+    #在升级到commons-dbcp2之后过期了
+    #initialSize: 5
+    #minIdle: 5
+    #maxActive: 20
+    #maxWait: 60000
+    #timeBetweenEvictionRunsMillis: 60000
+    #minEvictableIdleTimeMillis: 300000
+    dbcp2:
+      initial-size: 5
+      max-total: 20
+      min-idle: 5
+      max-wait-millis: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+
+
+
+  web:
+    resources:
+      static-locations: =classpath:/META-INF/resources/,classpath:/resources/, classpath:/static/, classpath:/public/, file:/home/img/
 mybatis:
-  mapper-locations: classpath*:com/train/businessserver/mapper/*.xml
-  type-aliases-package: com.train.businessserver.entity
+  mapper-locations: classpath*:com/train/business server/mapper/*.xml
+  type-aliases-package: com.train.business server.entity
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: false

@@ -1,6 +1,6 @@
-package com.example.demo.entity;
+package com.example.demo.entity
 
-import lombok.Data;
+import lombok.Data
 
 /**
  * 版权：渤海新能 版权所有
@@ -14,17 +14,22 @@ import lombok.Data;
  * GitHub:https://github.com/luhenchang
  */
 @Data
-public class Video {
+data class Video(
     //视频链接
-    private String videoUrl;
+    private val videoUrl: String? = null,
+
     //视频标题
-    private String videoTitle;
+    val videoTitle: String? = null,
+
     //视频点赞人数
-    private int videoLikes;
+    val videoLikes: Int = 0,
+
     //视频副标题
-    private String videoSubtitle;
+    val videoSubtitle: String? = null,
+
     //视频内容介绍
-    private String videoIntroduction;
+    val videoIntroduction: String? = null,
+
     //视频的类型
-    private int videoType;
-}
+    val videoType: Int = 0,
+)

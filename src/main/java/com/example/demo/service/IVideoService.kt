@@ -1,8 +1,6 @@
-package com.example.demo.service;
+package com.example.demo.service
 
-import com.example.demo.entity.Video;
-
-import java.util.List;
+import com.example.demo.entity.Video
 
 /**
  * 版权：渤海新能 版权所有
@@ -15,6 +13,6 @@ import java.util.List;
  * CSDN:https://blog.csdn.net/m0_37667770/article
  * GitHub:https://github.com/luhenchang
  */
-public interface IVideoService {
-    List<Video> getVideoByType(Video video);
+interface IVideoService {
+    fun getVideoByType(video: Video): List<Video>
 }

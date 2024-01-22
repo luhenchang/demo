@@ -1,9 +1,7 @@
-package com.example.demo.dao;
+package com.example.demo.dao
 
-import com.example.demo.entity.Video;
-import org.apache.ibatis.annotations.Select;
-
-import java.util.List;
+import com.example.demo.entity.Video
+import org.apache.ibatis.annotations.Select
 
 /**
  * 版权：渤海新能 版权所有
@@ -16,8 +14,8 @@ import java.util.List;
  * CSDN:https://blog.csdn.net/m0_37667770/article
  * GitHub:https://github.com/luhenchang
  */
-public interface IVideoDao {
+interface IVideoDao {
     //查询
     @Select("SELECT *FROM VIDEO WHERE videoType=#{videoType}")
-    List<Video> getVideoByType(Video video);
+    fun getVideoByType(video: Video?): List<Video>
 }
