@@ -1,28 +1,28 @@
 package com.example.demo.controller
 
-import com.example.demo.entity.LivoRecoment
-import com.example.demo.service.ILivoRecomentService
+import com.example.demo.entity.LiveRecoupment
+import com.example.demo.service.ILiveRecoupmentService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class LivoRecomentController {
-    var livoMap: MutableMap<String, Any> = HashMap()
+class LiveRecoupmentController {
+    var liveMap: MutableMap<String, Any> = HashMap()
 
     @Autowired
-    private lateinit var livoRecomentService: ILivoRecomentService
+    private lateinit var liveRecoupmentService: ILiveRecoupmentService
 
     @RequestMapping(value = ["USR000100003"])
-    fun getLivoRecoment(livoRecomentBean: LivoRecoment): Any {
-        val mData = livoRecomentService.GetRecomeData(livoRecomentBean)
+    fun getLiveRecoupment(liveRetBean: LiveRecoupment): Any {
+        val mData = liveRecoupmentService.recoupmentList(liveRetBean)
         if (mData.size > 0) {
-            livoMap["rescode"] = "000000"
-            livoMap["resobj"] = mData
+            liveMap["rescode"] = "000000"
+            liveMap["resobj"] = mData
         } else {
-            livoMap["rescode"] = "999999"
-            livoMap["resobj"] = "登录失败"
+            liveMap["rescode"] = "999999"
+            liveMap["resobj"] = "登录失败"
         }
-        return livoMap
+        return liveMap
     }
 }

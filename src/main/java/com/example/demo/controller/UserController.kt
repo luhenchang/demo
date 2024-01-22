@@ -28,18 +28,18 @@ class UserController {
     }
 
     @RequestMapping(value = ["USR000100000"])
-    fun Regise(inforMation: UserInferMarion): Any {
-        val isSuccessRegist = userService?.Regiset(inforMation)
-        if (isSuccessRegist == 1) {
+    fun Regise(information: UserInferMarion): Any {
+        val isSuccessRegister = userService?.Regiset(information)
+        if (isSuccessRegister == 1) {
             hashMap["rescode"] = "000000"
             hashMap["resobj"] = "注册成功"
-        } else if (isSuccessRegist == 1001) {
+        } else if (isSuccessRegister == 1001) {
             hashMap["rescode"] = "999999"
             hashMap["resobj"] = "用户已经存在"
-        } else if (isSuccessRegist == 1002) {
+        } else if (isSuccessRegister == 1002) {
             hashMap["rescode"] = "999999"
             hashMap["resobj"] = "用户名不能为空"
-        } else if (isSuccessRegist == 1003) {
+        } else if (isSuccessRegister == 1003) {
             hashMap["rescode"] = "999999"
             hashMap["resobj"] = "密码不能为空"
         } else {

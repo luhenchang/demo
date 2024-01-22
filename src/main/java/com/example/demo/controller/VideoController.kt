@@ -27,7 +27,7 @@ class VideoController {
     @RequestMapping(value = ["USR000100004"])
     fun getVideoByType(video: Video): MutableMap<String, Any> {
         val videos = videoService!!.getVideoByType(video)
-        if (videos.size > 0) {
+        if (videos.isNotEmpty()) {
             videoMap["rescode"] = "000000"
         } else {
             videoMap["rescode"] = "999999"

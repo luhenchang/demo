@@ -4,7 +4,7 @@ import lombok.Data
 import javax.persistence.Column
 
 @Data
-data class LivoRecoment(
+data class LiveRecoupment(
     @Column(name = "LIVE_IMG")
     var live_img: String? = null,
 

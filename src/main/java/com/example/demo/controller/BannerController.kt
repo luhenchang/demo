@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 class BannerController {
-    var bannMap: MutableMap<String, Any> = HashMap()
+    var bannerMap: MutableMap<String, Any> = HashMap()
 
     @Autowired
     private val bannerService: IBannerService? = null
@@ -17,11 +17,11 @@ class BannerController {
     fun getBanner(banner: Banner): MutableMap<String, Any> {
         val result = bannerService?.GetBannerData(banner)
         if (!result.isNullOrEmpty()) {
-            bannMap["rescode"] = "000000"
+            bannerMap["rescode"] = "000000"
         } else {
-            bannMap["rescode"] = "999999"
+            bannerMap["rescode"] = "999999"
         }
-        bannMap["resobj"] = result ?: emptyList<Banner>()
-        return bannMap
+        bannerMap["resobj"] = result ?: emptyList<Banner>()
+        return bannerMap
     }
 }

@@ -1,7 +1,7 @@
 package com.example.demo.dao
 
 import com.example.demo.entity.Banner
-import com.example.demo.entity.LivoRecoment
+import com.example.demo.entity.LiveRecoupment
 import org.apache.ibatis.annotations.Select
 
 interface IBannerDao {
@@ -11,5 +11,5 @@ interface IBannerDao {
 
     //查询语句
     @Select("SELECT *FROM LIVE_RECOMMEND_TABLE")
-    fun getLoveData(): List<LivoRecoment>
+    fun getLoveData(): List<LiveRecoupment>
 }
