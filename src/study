@@ -83,3 +83,24 @@ INSERT INTO TEST_USER_INFO(USRNAME,User_Phone) VALUES ('wangfei','13512219573')
 INSERT INTO TEST_USER_INFO (USRNAME,User_Phone,PASSWD) VALUES('唐吕','13453333455','123456')
 
 
+    /**
+     * RequestMapping 可以自定义请求方式，请求头约束,请求数据和响应数据等的约束
+     * method = [RequestMethod.POST]请求方式
+     * consumes = ["application/json"]请求数据格式
+     * headers = ["X-Custom-Header=123456"]请求头设置
+     * params = ["param=value"]使用params参数指定请求参数条件,映射路径为 "/USR000100000?param=value"
+     * produces = ["application/json"]设置响应数据格式约束
+     */
+    @RequestMapping(value = ["USR000100000"],params = ["param=value"], produces = ["application/json"])
+    fun register(information: UserInferMarion): ApiResponse<in RegisterReposeData> {
+        return when (val registerResult = userService?.register(information)) {
+            is Success -> ApiResponse.success(data = registerResult)
+            is Fail,
+            is PasswordEmpty,
+            is PasswordShort,
+            is UserNameAlreadyExt,
+            is UserNameEmpty -> ApiResponse.error(data = registerResult)
+
+            else -> ApiResponse.error(data = Fail())
+        }
+    }

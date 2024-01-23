@@ -3,6 +3,7 @@ package com.example.demo.service.iml
 import com.example.demo.dao.IUserDao
 import com.example.demo.entity.User
 import com.example.demo.entity.UserInferMarion
+import com.example.demo.entity.response_state.register.RegisterReposeData
 import com.example.demo.service.IUserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
@@ -17,18 +18,20 @@ class UserService : IUserService {
         return resInt == 1
     }
 
-    override fun Regiset(userInferMarion: UserInferMarion): Int {
-        if (userInferMarion.usrName.isNullOrEmpty()) {
-            return 1002 //表示为null或者empty
-        } else if (userInferMarion.passWd.isNullOrEmpty() || userInferMarion.passWd.length < 5
-        ) {
-            return 1003 //密码
+    override fun register(userInferMarion: UserInferMarion): RegisterReposeData {
+        if (userInferMarion.userName.isNullOrEmpty()) {
+            return RegisterReposeData.UserNameEmpty()
+        }
+        if (userInferMarion.passWd.isNullOrEmpty()) {
+            return RegisterReposeData.PasswordEmpty()
         }
         if (userDao?.doesItExist(userInferMarion) != null) {
-            return 1001 //表示已经存在
-        } else {
-            val restInt = userDao?.Regiest(userInferMarion)
-            return restInt ?: 1000
+            return RegisterReposeData.UserNameAlreadyExt()
         }
+        if (userInferMarion.passWd.length < 5) {
+            return RegisterReposeData.PasswordShort()
+        }
+        userDao?.register(userInferMarion) ?: return RegisterReposeData.Fail()
+        return RegisterReposeData.Success()
     }
 }
