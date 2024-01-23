@@ -4,6 +4,7 @@ import lombok.Data
 
 @Data
 data class Banner(
-   val bannerUrl: String? = null,
-   val bannerTitle: String? = null
+    val id: Int? = null,
+    val bannerUrl: String? = null,
+    val bannerTitle: String? = null
 )

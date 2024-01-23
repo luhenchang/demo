@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service
 class BannerService : IBannerService {
     @Autowired
     lateinit var bannerDao: IBannerDao
-    override fun GetBannerData(banner: Banner): List<Banner> {
+    override fun bannerList(banner: Banner): List<Banner> {
         return bannerDao.getBannerData()
     }
 }

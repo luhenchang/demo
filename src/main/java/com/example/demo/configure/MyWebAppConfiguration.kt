@@ -18,7 +18,9 @@ class MyWebAppConfiguration : WebMvcConfigurationSupport() {
      */
     public override fun addResourceHandlers(registry: ResourceHandlerRegistry) {
         registry.addResourceHandler("/path/**")
-            .addResourceLocations("file:/home/img/")
+            .addResourceLocations("classpath:/statics/")
+            .addResourceLocations("classpath:/templates/")
+            .addResourceLocations("file:/Users/img/")
         super.addResourceHandlers(registry)
     }
 }
