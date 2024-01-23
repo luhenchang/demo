@@ -33,11 +33,11 @@ spring:
       max-wait-millis: 60000
       time-between-eviction-runs-millis: 60000
       min-evictable-idle-time-millis: 300000
-
-  web:
-    resources:
-      static-locations:
-        [ classpath:/statics/]
+  #MyWebAppConfiguration进行了配置，所以不需要在此进行配置，且在此配置失败，可能是不同版本配置问题。
+  #web:
+    #resources:
+      #static-locations:
+        #[ classpath:/statics/]
 
 mybatis:
   mapper-locations: classpath*:com/train/business server/mapper/*.xml
