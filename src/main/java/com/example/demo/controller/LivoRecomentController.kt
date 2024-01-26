@@ -1,7 +1,7 @@
 package com.example.demo.controller
 
 import com.example.demo.entity.LiveRecoupment
-import com.example.demo.service.ILiveRecoupmentService
+import com.example.demo.service.LiveRecoupmentService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
@@ -11,7 +11,7 @@ class LiveRecoupmentController {
     var liveMap: MutableMap<String, Any> = HashMap()
 
     @Autowired
-    private lateinit var liveRecoupmentService: ILiveRecoupmentService
+    private lateinit var liveRecoupmentService: LiveRecoupmentService
 
     @RequestMapping(value = ["USR000100003"])
     fun getLiveRecoupment(liveRetBean: LiveRecoupment): Any {

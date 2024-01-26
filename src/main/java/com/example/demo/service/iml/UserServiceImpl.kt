@@ -1,17 +1,17 @@
 package com.example.demo.service.iml
 
-import com.example.demo.dao.IUserDao
+import com.example.demo.dao.UserDao
 import com.example.demo.entity.User
 import com.example.demo.entity.UserInferMarion
 import com.example.demo.entity.response_state.register.RegisterReposeData
-import com.example.demo.service.IUserService
+import com.example.demo.service.UserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
 @Service
-class UserService : IUserService {
+class UserServiceImpl : UserService {
     @Autowired
-    private val userDao: IUserDao? = null
+    private val userDao: UserDao? = null
 
     override fun login(user: User): Boolean {
         val resInt = userDao?.login(user)

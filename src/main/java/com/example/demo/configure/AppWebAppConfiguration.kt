@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
  * @create: 2018-12-26 19:50
  */
 @Configuration
-class MyWebAppConfiguration : WebMvcConfigurationSupport() {
+class AppWebAppConfiguration : WebMvcConfigurationSupport() {
     /**
      * @Description:
      * 对文件的路径进行配置, 创建一个虚拟路径/Path/ **

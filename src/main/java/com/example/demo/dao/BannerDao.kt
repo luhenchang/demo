@@ -5,7 +5,7 @@ import com.example.demo.entity.LiveRecoupment
 import org.apache.ibatis.annotations.Mapper
 import org.apache.ibatis.annotations.Select
 @Mapper
-interface IBannerDao {
+interface BannerDao {
     //通过user给
     @Select("SELECT *FROM APP_BANNER_TABLE")
     fun getBannerData(): List<Banner>

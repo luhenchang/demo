@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Insert
 import org.apache.ibatis.annotations.Select
 
 //INSERT INTO table_name (列1, 列2,...) VALUES (值1, 值2,....)
-interface IUserDao {
+interface UserDao {
     //通过user给
     @Select("SELECT COUNT(1) FROM APP_USER_INFO WHERE 1=1 AND user_name = #{userName} AND password = #{passWd}")
     fun login(user: User?): Int

@@ -5,7 +5,7 @@ import com.example.demo.entity.User
 import com.example.demo.entity.UserInferMarion
 import com.example.demo.entity.response_state.register.RegisterReposeData
 import com.example.demo.entity.response_state.register.RegisterReposeData.*
-import com.example.demo.service.IUserService
+import com.example.demo.service.UserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
@@ -16,7 +16,7 @@ class UserController {
     private val hashMap = HashMap<String, Any>()
 
     @Autowired
-    private val userService: IUserService? = null
+    private val userService: UserService? = null
 
     @RequestMapping(value = ["USR000100001"])
     fun login(user: User): Any {
